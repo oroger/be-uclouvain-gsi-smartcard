@@ -1,6 +1,5 @@
 package be.uclouvain.gsi.smartcard.eid.model;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +12,7 @@ import javax.smartcardio.ResponseAPDU;
 
 import be.uclouvain.gsi.smartcard.util.ResponseAPDUVerifier;
 import be.uclouvain.gsi.smartcard.util.TLVParser;
+import be.uclouvain.gsi.smartcard.util.IO;
 
 /**
  * @author Olivier Roger
@@ -42,11 +42,8 @@ public class EID {
     	return this.data.toString() + this.address.toString();
     }
     
-    public void save(String path, byte[] data) throws IOException{
-    	FileOutputStream fos = new FileOutputStream(path);
-    	fos.write(data);
-    	fos.flush();
-    	fos.close();
+    public void savePicture(String path) throws IOException{
+    	IO.save(path, getPicture());
     }
     
     /**
