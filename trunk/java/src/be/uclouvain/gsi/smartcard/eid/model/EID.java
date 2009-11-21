@@ -31,7 +31,7 @@ public class EID {
     private Address address;
     private byte[] picture;
     
-    public EID(Card card) throws CardException, IOException {
+    public EID(Card card) throws CardException {
     	channel = card.getBasicChannel();
     	data = new RN(TLVParser.parse(this.readFile(ID)));
     	address = new Address(TLVParser.parse(this.readFile(ADDRESS)));
@@ -123,6 +123,5 @@ public class EID {
 	public void setPicture(byte[] picture) {
 		this.picture = picture;
 	}
-    
     
 }

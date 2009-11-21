@@ -1,6 +1,5 @@
 package be.uclouvain.gsi.smartcard.util;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
