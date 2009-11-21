@@ -1,0 +1,15 @@
+
+11-21-2009 - Olivier Roger - Simple eID Java/Swing
+
+- Create and sign executable JAR
+- Set up Java web start
+- Display data in JTextArea and JButton icon
+- Bugfix: List of connected readers
+- Bugfix: Load empty image from resource
+
+
+11-11-2009 - Olivier Roger - CLI
+
+- Creation of the google code project
+- Simple CLI application sample to view data and extract picture
+- Implement eID model classes
