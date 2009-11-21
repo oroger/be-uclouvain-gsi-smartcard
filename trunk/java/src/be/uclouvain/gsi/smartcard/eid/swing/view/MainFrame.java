@@ -110,7 +110,7 @@ public class MainFrame extends JFrame{
 	}
 	
 	private void clearPicture(){
-		setImage(this.getClass().getClassLoader().getResource("be/uclouvain/gsi/smartcard/eid/swing/res/empty.jpg").getFile());
+		setImage(new ImageIcon(this.getClass().getClassLoader().getResource("be/uclouvain/gsi/smartcard/eid/swing/res/empty.jpg")));
 	}
 	
 	private void clearText(){
