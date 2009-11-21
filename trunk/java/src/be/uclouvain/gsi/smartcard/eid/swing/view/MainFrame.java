@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import be.uclouvain.gsi.smartcard.eid.swing.action.AboutAction;
+import be.uclouvain.gsi.smartcard.eid.swing.action.ClearAction;
 import be.uclouvain.gsi.smartcard.eid.swing.action.ExitAction;
 import be.uclouvain.gsi.smartcard.eid.swing.action.ReadAction;
 import be.uclouvain.gsi.smartcard.eid.swing.action.RefreshAction;
@@ -62,6 +63,8 @@ public class MainFrame extends JFrame{
 		
 		// File
 		JMenu file = new JMenu("File");
+		JMenuItem clear = new JMenuItem(new ClearAction(this, "Clear"));
+		file.add(clear);
 		JMenuItem exit = new JMenuItem(new ExitAction("Exit"));
 		file.add(exit);
 		menu.add(file);
@@ -107,7 +110,7 @@ public class MainFrame extends JFrame{
 	}
 	
 	private void clearPicture(){
-		setImage("src\\be\\uclouvain\\gsi\\smartcard\\eid\\swing\\ressource\\empty.jpg");
+		setImage(this.getClass().getClassLoader().getResource("be/uclouvain/gsi/smartcard/eid/swing/res/empty.jpg").getFile());
 	}
 	
 	private void clearText(){

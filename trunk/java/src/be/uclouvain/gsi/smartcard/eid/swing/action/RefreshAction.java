@@ -1,5 +1,6 @@
 package be.uclouvain.gsi.smartcard.eid.swing.action;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 
 import javax.smartcardio.CardException;
@@ -24,17 +25,37 @@ public class RefreshAction extends AbstractAction {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		String selected = null; 
+		
+		// Keep name of the selected item to set 
+		// it again if the reader is still connected
+		if (group.getSelection() != null){
+			selected = group.getSelection().getActionCommand();
+		}
+		
+		// Remove all old menu and group items
+		group.clearSelection();
+		for (Component item : menu.getMenuComponents()) {
+			if (item instanceof JRadioButtonMenuItem){
+				group.remove(((JRadioButtonMenuItem) item));
+			}
+		}
 		menu.removeAll();
 		
+		// Add all plugged readers
 		try {
 			JRadioButtonMenuItem term;
 			for (CardTerminal ct : Terminal.getList()) {
 				term = new JRadioButtonMenuItem();
 				term.setAction(new TerminalAction(term, ct.getName().toString()));
 				group.add(term);
+				if (selected != null && ct.getName().toString().equals(selected)){
+					term.setActionCommand(ct.getName().toString());
+					group.setSelected(term.getModel(), true);
+				}
 				menu.add(term);
 			}
-		} catch (CardException ce) { // Catch Silently
+		} catch (CardException ce) {
 			ce.printStackTrace();
 		}
 		

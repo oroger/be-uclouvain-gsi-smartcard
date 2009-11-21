@@ -6,6 +6,7 @@ import javax.smartcardio.CardException;
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 import be.uclouvain.gsi.smartcard.eid.model.EID;
 import be.uclouvain.gsi.smartcard.eid.swing.view.MainFrame;
@@ -25,7 +26,10 @@ public class ReadAction extends AbstractAction {
 	
 	public void actionPerformed(ActionEvent e) {
 		if (group.getSelection() == null) {
-			// TODO: Popup "Please select a reader first
+			JOptionPane.showMessageDialog(null, 
+					"Please Select a reader first.", 
+					"No reader selected",
+					JOptionPane.WARNING_MESSAGE);
 			return;
 		}
 		String selected = group.getSelection().getActionCommand();
@@ -33,7 +37,7 @@ public class ReadAction extends AbstractAction {
 			EID eid = new EID(Terminal.getCard(selected));
 			app.clear();
 			app.appendText(eid.getData().toString());
-			app.appendText("");
+			app.appendText("\n");
 			app.appendText(eid.getAddress().toString());
 			app.setImage(new ImageIcon(eid.getPicture()));
 		} catch (ReaderException re) {
