@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp spec="1.0+" codebase="http://be-uclouvain-gsi-smartcard.googlecode.com/svn/trunk/java/jnlp/eid/" href="java-eid-swing.jnlp">
+<jnlp spec="1.0+" codebase="http://be-uclouvain-gsi-smartcard.googlecode.com/svn/trunk/java/jnlp/" href="java-eid-swing.jnlp">
 
     <information>
 		<title>eID Reader</title>
