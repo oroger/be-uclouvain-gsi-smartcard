@@ -16,10 +16,10 @@ public class Address {
 	
 	public String toString(){
 		String result = "";
-//		result += "fileStructureVersion: " + new String(fileStructureVersion) + "\n";
-		result += "Street and number: " + StreetAndNumber + "\n";
-		result += "Zip Code: " + zipCode + "\n";
-		result += "Municipality: " + municipality + "\n";
+//		result += "fileStructureVersion: " + new String(fileStructureVersion) + "\r\n";
+		result += "Street and number: " + StreetAndNumber + "\r\n";
+		result += "Zip Code: " + zipCode + "\r\n";
+		result += "Municipality: " + municipality + "\r\n";
 		return result;
 	}
 
