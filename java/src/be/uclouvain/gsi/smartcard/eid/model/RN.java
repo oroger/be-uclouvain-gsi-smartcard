@@ -34,22 +34,22 @@ public class RN {
 	public String toString(){
 		String result = "";
 //		result += "File Structure Version: " + fileStructureVersion + "\n";
-		result += "Card Number: " + cardNumber + "\n";
-//		result += "Chip Number: " + chipNumber + "\n";
-		result += "Validity Begin Date: " + validityBeginDate + "\n";
-		result += "Validity End Date: " + validityEndDate + "\n";
-		result += "Delivery Municipality: " + deliveryMunicipality + "\n";
-		result += "National Number :" + nationalNumber + "\n";
-		result += "Name: " + name + "\n";
-		result += "Firstname: " + firstname + "\n";
-		result += "Third Firstname Initial: " + thirdFirstnameInitial + "\n";
-		result += "Nationality: " + nationality + "\n";
-		result += "BirthLocation: " + birthLocation + "\n";
-		result += "BirthDate: " + birthDate + "\n";
-		result += "Sex: " + sex + "\n";
-		result += "Noble Condition: " + nobleCondition + "\n";
-		result += "Document Type: " + documentType + "\n";
-//		result += "Hash Photo: " + hashPhoto + "\n";
+		result += "Card Number: " + cardNumber + "\r\n";
+//		result += "Chip Number: " + chipNumber + "\r\n";
+		result += "Validity Begin Date: " + validityBeginDate + "\r\n";
+		result += "Validity End Date: " + validityEndDate + "\r\n";
+		result += "Delivery Municipality: " + deliveryMunicipality + "\r\n";
+		result += "National Number :" + nationalNumber + "\r\n";
+		result += "Name: " + name + "\r\n";
+		result += "Firstname: " + firstname + "\r\n";
+		result += "Third Firstname Initial: " + thirdFirstnameInitial + "\r\n";
+		result += "Nationality: " + nationality + "\r\n";
+		result += "BirthLocation: " + birthLocation + "\r\n";
+		result += "BirthDate: " + birthDate + "\r\n";
+		result += "Sex: " + sex + "\r\n";
+		result += "Noble Condition: " + nobleCondition + "\r\n";
+		result += "Document Type: " + documentType + "\r\n";
+//		result += "Hash Photo: " + hashPhoto + "\r\n";
 		return result;
 	}
 

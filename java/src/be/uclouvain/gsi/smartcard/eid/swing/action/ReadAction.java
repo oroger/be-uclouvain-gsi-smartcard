@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import javax.smartcardio.CardException;
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import be.uclouvain.gsi.smartcard.eid.model.EID;
@@ -35,11 +34,7 @@ public class ReadAction extends AbstractAction {
 		String selected = group.getSelection().getActionCommand();
 		try {
 			EID eid = new EID(Terminal.getCard(selected));
-			app.clear();
-			app.appendText(eid.getData().toString());
-			app.appendText("\n");
-			app.appendText(eid.getAddress().toString());
-			app.setImage(new ImageIcon(eid.getPicture()));
+			app.setEid(eid);
 		} catch (ReaderException re) {
 			re.printStackTrace();
 		} catch (CardException ce) {
