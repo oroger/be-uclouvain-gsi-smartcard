@@ -2,6 +2,7 @@ package be.uclouvain.gsi.smartcard.eid.swing.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -38,10 +39,10 @@ public class MainFrame extends JFrame{
 	
 	private void build(){
 		setTitle("Smartcard.eid.swing"); 
-		setSize(600,400); 
+		setMinimumSize(new Dimension(500,340));
 		setLocationRelativeTo(null);
-		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		setContentPane(buildContentPane());
 		setJMenuBar(buildMenu());
 	}
@@ -125,12 +126,13 @@ public class MainFrame extends JFrame{
 	}
 	
 	public void load(String data, byte[] picture){
-		setText(data);
+		clearText();
+		addText(data);
 		setImage(new ImageIcon(picture));
 	}
 	
-	private void setText(String data){
-		txt.setText(data);
+	private void addText(String data){
+		txt.append(data);
 	}
 
 	private void setImage(ImageIcon icon){

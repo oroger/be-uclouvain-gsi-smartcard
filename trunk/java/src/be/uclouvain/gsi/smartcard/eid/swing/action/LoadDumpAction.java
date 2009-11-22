@@ -30,7 +30,7 @@ public class LoadDumpAction extends AbstractAction{
         
         app.clear();
         
-        int returnVal = fc.showSaveDialog(app);
+        int returnVal = fc.showOpenDialog(app);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fc.getSelectedFile();
 
