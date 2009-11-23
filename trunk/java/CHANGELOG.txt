@@ -1,3 +1,16 @@
+RoadMap:
+
+- Dump in XML
+- Save Settings
+- Use Maven
+- Improve GUI
+- Style PDF export
+
+11-23-2009 - Olivier Roger - Simple eID Java/Swing
+
+- Logging
+- Export to PDF (simple)
+
 11-22-2009 - Olivier Roger - Simple eID Java/Swing
 
 - Dump save/load feature
