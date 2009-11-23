@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import be.uclouvain.gsi.smartcard.eid.model.EID;
 import be.uclouvain.gsi.smartcard.eid.swing.view.MainFrame;
 import be.uclouvain.gsi.smartcard.exception.ReaderException;
+import be.uclouvain.gsi.smartcard.util.Logging;
 import be.uclouvain.gsi.smartcard.util.Terminal;
 
 @SuppressWarnings({ "serial", "restriction" })
@@ -35,10 +36,11 @@ public class ReadAction extends AbstractAction {
 		try {
 			EID eid = new EID(Terminal.getCard(selected));
 			app.setEid(eid);
+			Logging.info("eID read: " + eid.getFullName());
 		} catch (ReaderException re) {
-			re.printStackTrace();
+			Logging.severe(re);
 		} catch (CardException ce) {
-			ce.printStackTrace();
+			Logging.severe(ce);
 		}
 	}
 }

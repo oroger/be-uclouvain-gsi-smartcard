@@ -10,6 +10,7 @@ import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 
 import be.uclouvain.gsi.smartcard.eid.swing.view.MainFrame;
+import be.uclouvain.gsi.smartcard.util.Logging;
 
 @SuppressWarnings("serial")
 public class LoadDumpAction extends AbstractAction{
@@ -43,11 +44,12 @@ public class LoadDumpAction extends AbstractAction{
 					data = new byte[length];
 					dis.read(data, 0, length);
 					app.load(text, data);
+					Logging.info(file.getPath() + " Loaded");
 				} finally{
 					dis.close();
 				}
 			} catch (IOException e) {
-				e.printStackTrace();
+				Logging.severe(e);
 			}
         }
 	}

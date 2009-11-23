@@ -11,6 +11,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 
+import be.uclouvain.gsi.smartcard.util.Logging;
 import be.uclouvain.gsi.smartcard.util.Terminal;
 
 @SuppressWarnings({ "serial", "restriction" })
@@ -56,7 +57,7 @@ public class RefreshAction extends AbstractAction {
 				menu.add(term);
 			}
 		} catch (CardException ce) {
-			ce.printStackTrace();
+			Logging.warning(ce.getMessage());
 		}
 		
 		menu.addSeparator();
