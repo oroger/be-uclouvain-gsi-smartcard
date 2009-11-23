@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import be.uclouvain.gsi.smartcard.eid.model.EID;
 import be.uclouvain.gsi.smartcard.eid.swing.view.MainFrame;
 import be.uclouvain.gsi.smartcard.util.IO;
+import be.uclouvain.gsi.smartcard.util.Logging;
 
 @SuppressWarnings("serial")
 public class SavePictureAction extends AbstractAction{
@@ -40,9 +41,9 @@ public class SavePictureAction extends AbstractAction{
             }
 			try {
 				IO.save(file.toString(), eid.getPicture());
+				Logging.info("Picture saved to: " + file.getPath());
 			} catch (IOException e) {
-				JOptionPane.showConfirmDialog(app, "Could not save image.");
-				e.printStackTrace();
+				Logging.severe(e);
 			}
         }
 	}

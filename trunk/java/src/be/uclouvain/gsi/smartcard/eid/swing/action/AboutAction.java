@@ -16,6 +16,10 @@ public class AboutAction extends AbstractAction {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(frame, "Application written by Olivier Roger (Olivier.Roger@gmail.com)\n please visite http://code.google.com/p/be-uclouvain-gsi-smartcard/ for more details.");
+		JOptionPane.showMessageDialog(frame, 
+				"Application written by Olivier Roger " +
+				"(Olivier.Roger@gmail.com)\n please visit " +
+				"http://code.google.com/p/be-uclouvain-gsi-smartcard/ " +
+				"for more details.");
 	}
 }

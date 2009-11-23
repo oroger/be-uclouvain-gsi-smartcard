@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 
 import be.uclouvain.gsi.smartcard.eid.model.EID;
 import be.uclouvain.gsi.smartcard.eid.swing.view.MainFrame;
+import be.uclouvain.gsi.smartcard.util.Logging;
 
 @SuppressWarnings("serial")
 public class SaveDumpAction extends AbstractAction{
@@ -48,11 +49,12 @@ public class SaveDumpAction extends AbstractAction{
 					dos.writeInt(eid.getPicture().length);
 					dos.write(eid.getPicture());
 					dos.flush();
+					Logging.info("Dump saved to " + file.getPath());
 				} finally{
 					dos.close();
 				}
 			} catch (IOException e) {
-				e.printStackTrace();
+				Logging.severe(e);
 			}
         }
 	}

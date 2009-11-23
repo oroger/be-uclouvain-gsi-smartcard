@@ -18,6 +18,7 @@ import be.uclouvain.gsi.smartcard.eid.model.EID;
 import be.uclouvain.gsi.smartcard.eid.swing.action.AboutAction;
 import be.uclouvain.gsi.smartcard.eid.swing.action.ClearAction;
 import be.uclouvain.gsi.smartcard.eid.swing.action.ExitAction;
+import be.uclouvain.gsi.smartcard.eid.swing.action.ExportPDFAction;
 import be.uclouvain.gsi.smartcard.eid.swing.action.LoadDumpAction;
 import be.uclouvain.gsi.smartcard.eid.swing.action.ReadAction;
 import be.uclouvain.gsi.smartcard.eid.swing.action.RefreshAction;
@@ -39,7 +40,7 @@ public class MainFrame extends JFrame{
 	
 	private void build(){
 		setTitle("Smartcard.eid.swing"); 
-		setMinimumSize(new Dimension(500,340));
+		setMinimumSize(new Dimension(500,360));
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -84,7 +85,12 @@ public class MainFrame extends JFrame{
 		save.add(SaveText);
 		JMenuItem SavePicture = new JMenuItem(new SavePictureAction(this,"Picture"));
 		save.add(SavePicture);
-		file.add(save);		
+		file.add(save);
+		
+		JMenu export = new JMenu("Export");
+		JMenuItem PDF = new JMenuItem(new ExportPDFAction(this,"PDF"));
+		export.add(PDF);
+		file.add(export);	
 
 		JMenuItem exit = new JMenuItem(new ExitAction("Exit"));
 		file.add(exit);
@@ -124,17 +130,20 @@ public class MainFrame extends JFrame{
 			clearPicture();
 		}
 	}
-	
+
+	// Temporary, only to load dump
 	public void load(String data, byte[] picture){
 		clearText();
 		addText(data);
 		setImage(new ImageIcon(picture));
 	}
 	
+	// Temporary, only to load dump
 	private void addText(String data){
 		txt.append(data);
 	}
 
+	// Temporary, only to load dump
 	private void setImage(ImageIcon icon){
 		picture.setIcon(icon);
 	}	

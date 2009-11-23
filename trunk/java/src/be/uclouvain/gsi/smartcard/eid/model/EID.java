@@ -123,5 +123,9 @@ public class EID {
 	public void setPicture(byte[] picture) {
 		this.picture = picture;
 	}
+	
+	public String getFullName(){
+		return data.getName() + " " + data.getFirstname();
+	}
     
 }
